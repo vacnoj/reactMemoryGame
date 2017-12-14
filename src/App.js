@@ -67,8 +67,14 @@ class App extends Component {
     return (
       <div className="App">
       <Header score= {this.state.score} bestScore={this.state.bestScore}/>
-        <div className="gameBoard">
-          {renderImages.map((image) => <img src={image.image}  alt="alt" onClick={this.clickHandler.bind(null, image.id, image.guessed)} />)}
+        <div className="container">
+        <div className="row">
+        <div className="col-md-4"></div>
+        <div className="col-md-4">
+          {renderImages.map((image) =>  <div className="card"><img src={image.image}  alt="alt" onClick={this.clickHandler.bind(null, image.id, image.guessed)} /></div>)}
+        </div>
+        <div className="col-md-4"></div>
+        </div>
         </div>
       </div>
     );
